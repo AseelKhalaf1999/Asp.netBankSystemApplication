@@ -1,0 +1,15 @@
+﻿@model WebBankSystemApplication.Models.User
+@{
+    ViewBag.Title = "ListOfUsers";
+}
+
+
+  @{
+      var listOfUsers = Session["users"] != null ? (List<WebBankSystemApplication.Models.User>)Session["users"] : new List<WebBankSystemApplication.Models.User>
+                ();
+      foreach (WebBankSystemApplication.Models.User userItem in listOfUsers)
+      {
+        @Html.Partial("_User", userItem)
+
+          }
+      }

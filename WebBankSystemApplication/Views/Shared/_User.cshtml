@@ -1,0 +1,26 @@
+﻿@model WebBankSystemApplication.Models.User
+@{
+    ViewBag.Title = "_User";
+}
+<style>
+   
+</style>
+<div style="background-color:gainsboro"  >
+  @{ 
+      if (Model != null)
+      {
+    <h3>User Name : @Model.Name</h3>
+    <h3>User Email : @Model.Email</h3>
+    <h3>User gender : @Model.gender</h3>
+    <h3>User balance : @Model.Balance</h3>
+    <h3>
+        Account id : @Model.account.AccountId
+    </h3>
+      }
+      else {
+      <h3 style="color:red">No Users In the list !</h3>}
+      }
+</div>
+
+
+

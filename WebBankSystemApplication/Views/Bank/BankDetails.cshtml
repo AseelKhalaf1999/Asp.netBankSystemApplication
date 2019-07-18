@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "BankDetailsView";
+}
+
+<h2 style="color:darkcyan">BankDetailsView</h2>
+
+@{
+    if (ViewBag.BankDetails != null)
+    {
+        var bankObj = (WebBankSystemApplication.Models.Bank)ViewBag.BankDetails;
+        var name = bankObj.BankName;
+        var address = bankObj.Address;
+        var phone = bankObj.BankPhoneNumber;
+
+
+        <div>
+            <div> Name: @name</div>
+            <div> phone: @phone </div>
+            <div> address: @address </div>
+        </div>
+    }
+    else
+    {
+        <div>No Details</div>
+    }
+
+
+}
+

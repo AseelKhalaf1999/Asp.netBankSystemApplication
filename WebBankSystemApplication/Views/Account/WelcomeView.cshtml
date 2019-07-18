@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "WelcomeView";
+}
+
+<h2>Welcome To Bank System Account View</h2>
+
+<h3>Choose The Option You Want </h3>
+<ul class="nav navbar-nav">
+    <li>@Html.ActionLink("Open Your Account", "FillAccountInfo", "Account")</li>
+    <li>@Html.ActionLink("CloseAccount", "FillIdToCloseAccount", "Account")</li>
+    <li>@Html.ActionLink("Withdraw", "Withdraw", "Account")</li>
+    <li>@Html.ActionLink("deposit", "Deposit", "Account")</li>
+
+</ul>

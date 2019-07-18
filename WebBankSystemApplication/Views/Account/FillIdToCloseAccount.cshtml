@@ -1,0 +1,21 @@
+﻿@model WebBankSystemApplication.Models.User
+@{
+                /**/
+
+                ViewBag.Title = "CloseAccountView";
+}
+
+<h2>We Are Sorry To hear That You Will Close Your Account :( , Hope To seen You Soon</h2>
+
+<form action="CloseAccount" method="post">
+    Enter Your Account Id please : <br>
+    @*@Html.TextBoxFor(model => model.account.AccountId, new { required = "requierd" })*@
+
+    <input type="text" value="" id="accountId" name="accountId"/>
+    <input type="submit" value="Close" />
+    <input type="reset" value="clear" />
+</form>
+
+
+
+

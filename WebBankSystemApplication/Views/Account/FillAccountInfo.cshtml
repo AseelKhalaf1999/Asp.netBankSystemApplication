@@ -1,0 +1,41 @@
+﻿@model WebBankSystemApplication.Models.User
+@{
+    ViewBag.Title = "Fill Account an User Info ";
+}
+
+<style>
+    .error {
+        color:red;
+    }
+</style>
+<h2>Welcome To Our Bank ! Let's Fill Your Details To Open an Account For You !</h2>
+<div style="background-color:darkgray">
+   
+    <form action="GetAllOpenedAccount" method="post">
+
+
+        <lable> Your Name:</lable><br>
+
+        @Html.TextBoxFor(model => model.Name, new { required = "requierd" })
+       @*@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Type Your Name Here" } });*@
+        @Html.ValidationMessageFor(model => model.Name,"",new { @class="error"})
+        <br>
+        <lable> Your Email:</lable><br>
+        @Html.TextBoxFor(model => model.Email, new { required = "requierd",
+   pattern= @"(^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$)",
+
+   })
+
+        <br>
+        <lable> Your Gender:</lable><br>
+        @Html.TextBoxFor(model => model.gender, new { required = "requierd" })
+
+        <br>
+        <lable> Your Balance:</lable><br>
+        @Html.TextBoxFor(model => model.Balance, new { required = "requierd" , type="number" })
+        <br>
+
+
+        <input type="submit" name="submit" value="Open Account" />
+        <input type="reset" value="Reset Form" />
+    </form>
